@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Habit Tracker - Blockchain</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+
+    <style>
+
+        body {
+            background: linear-gradient(270deg, #020024, #090979, #00d4ff, #020024);
+            background-size: 800% 800%;
+            animation: gradientMove 15s ease infinite;
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% }
+            50% { background-position: 100% }
+            100% { background-position: 0% }
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            margin-top: 60px;
+            border-radius: 20px;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 40px #00ffff55;
+            transition: 0.3s;
+        }
+
+        .hero:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 60px #00ffffaa;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #00ffff;
+            text-shadow: 0 0 20px #00ffff;
+            animation: glowPulse 2s infinite alternate;
+        }
+
+        @keyframes glowPulse {
+            from { text-shadow: 0 0 10px #00ffff }
+            to { text-shadow: 0 0 30px #00ffff }
+        }
+
+        .hero p {
+            color: #cbd5e1;
+            font-size: 1.2rem;
+        }
+
+        .neon-btn {
+            background: linear-gradient(45deg, #00ffff, #22c55e);
+            border: none;
+            padding: 14px 32px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            color: black;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 0 20px #00ffff55;
+        }
+
+        .neon-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px #22c55e;
+        }
+
+    </style>
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+<div class="container">
+
+    <div class="hero">
+
+        <h1>
+            <i class="fa-solid fa-link"></i>
+            Blockchain Habit Tracker
+        </h1>
+
+        <p>
+            Track your habits securely and transparently on a blockchain.
+        </p>
+
+        <a href="{{ url_for('add_habit') }}" class="neon-btn">
+            <i class="fa-solid fa-plus"></i> Add New Habit
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Search Habit</title>
+
+<style>
+
+body {
+    background: radial-gradient(circle at top, #020617, #000);
+    color: #00ffff;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    padding: 40px;
+}
+
+h2 {
+    color: cyan;
+    text-shadow: 0 0 15px cyan;
+}
+
+form {
+    margin: 30px auto;
+}
+
+input {
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: 1px solid cyan;
+    background: rgba(0,255,255,0.05);
+    color: white;
+    outline: none;
+    width: 280px;
+}
+
+input:focus {
+    box-shadow: 0 0 10px cyan;
+}
+
+button {
+    padding: 12px 20px;
+    margin-left: 10px;
+    border-radius: 10px;
+    border: 1px solid #22c55e;
+    background: transparent;
+    color: #22c55e;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #22c55e;
+    color: black;
+    box-shadow: 0 0 10px #22c55e;
+}
+
+.result-card {
+    background: rgba(0,255,255,0.05);
+    border: 1px solid cyan;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 15px auto;
+    width: 60%;
+    box-shadow: 0 0 15px #00ffff33;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>🔎 Neon Habit Search</h2>
+
+<form method="POST">
+<input type="text" name="query" placeholder="Enter habit name" required>
+<button type="submit">Search</button>
+</form>
+
+{% if results %}
+<h3>Results:</h3>
+
+{% for block in results %}
+<div class="result-card">
+Block {{ block.index }} — {{ block.data }}
+</div>
+{% endfor %}
+
+{% endif %}
+
+</body>
+</html>
